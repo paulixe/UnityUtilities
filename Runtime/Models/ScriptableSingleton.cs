@@ -1,26 +1,29 @@
 using UnityEngine;
-
-public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableSingleton<T>
+namespace Utilities
 {
-    private static T instance;
-    public static T Instance
+    public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableSingleton<T>
     {
-        get
+        private static T instance;
+        public static T Instance
         {
-            if (instance == null)
+            get
             {
-                T[] assets = Resources.LoadAll<T>("");
-                if (assets == null || assets.Length < 1)
+                if (instance == null)
                 {
-                    throw new System.Exception("Could not find any scriptable object instances in the resources");
+
+                    T[] assets = Resources.LoadAll<T>("");
+                    if (assets == null || assets.Length < 1)
+                    {
+                        throw new System.Exception("Could not find any scriptable object instances in the resources");
+                    }
+                    else if (assets.Length > 1)
+                    {
+                        Debug.LogWarning("Multiple instances of the scriptable object found in the resources");
+                    }
+                    instance = assets[0];
                 }
-                else if (assets.Length > 1)
-                {
-                    Debug.LogWarning("Multiple instances of the scriptable object found in the resources");
-                }
-                instance = assets[0];
+                return instance;
             }
-            return instance;
         }
     }
 }

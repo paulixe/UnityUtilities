@@ -1,7 +1,7 @@
 using System;
 using UnityEditor;
 
-namespace Historisation
+namespace EditorUtilities
 {
     public static class EditorExtensions
     {

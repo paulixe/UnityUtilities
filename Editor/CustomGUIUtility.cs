@@ -2,9 +2,9 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace Historisation
+namespace EditorUtilities
 {
-    public static class EditorUtilities
+    public static class CustomGUIUtility
     {
         public static void ForceProjectWindowRepaint()
         {

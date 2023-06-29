@@ -6,7 +6,7 @@ using UnityEngine;
 using Obj = UnityEngine.Object;
 namespace Historisation
 {
-    public static class ValidateUtilities
+    public static class ValidateUtility
     {
         public static bool CheckEnumerableValues(Obj thisObject, string fieldName, IEnumerable enumerableObjectToCheck)
         {

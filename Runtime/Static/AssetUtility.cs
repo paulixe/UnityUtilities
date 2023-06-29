@@ -1,7 +1,7 @@
 using System.IO;
 namespace Historisation
 {
-    public static class AssetUtilities
+    public static class AssetUtility
     {
         public static string GetUniquePath(string path, string extension)
         {

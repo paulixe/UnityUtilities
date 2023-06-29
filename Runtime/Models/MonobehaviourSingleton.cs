@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-namespace Historisation
+namespace Utilities
 {
     public class MonobehaviourSingleton<T> : MonoBehaviour where T : MonobehaviourSingleton<T>
     {

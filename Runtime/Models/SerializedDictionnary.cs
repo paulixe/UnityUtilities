@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Historisation
+namespace Utilities
 {
     [Serializable]
     public class SerializedDictionnary<TKey, TValue> : ISerializationCallbackReceiver
