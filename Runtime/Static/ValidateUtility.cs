@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Obj = UnityEngine.Object;
-namespace Historisation
+namespace Utilities
 {
     public static class ValidateUtility
     {

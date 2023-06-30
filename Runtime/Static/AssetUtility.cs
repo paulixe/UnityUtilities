@@ -1,5 +1,5 @@
 using System.IO;
-namespace Historisation
+namespace Utilities
 {
     public static class AssetUtility
     {
