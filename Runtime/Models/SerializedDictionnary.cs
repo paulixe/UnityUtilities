@@ -34,7 +34,7 @@ namespace Utilities
 
             foreach (var pair in Dic)
             {
-                entries.Add(new(pair.Key, pair.Value));
+                entries.Add(new Entry(pair.Key, pair.Value));
             }
         }
 
