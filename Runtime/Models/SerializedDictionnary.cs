@@ -9,14 +9,14 @@ namespace Utilities
     public class SerializedDictionnary<TKey, TValue> : ISerializationCallbackReceiver
     {
 
-        [SerializeField] List<Entry> entries = new List<Entry>();
+        [SerializeField] private List<Entry> entries = new List<Entry>();
 
         public Dictionary<TKey, TValue> Dic = new Dictionary<TKey, TValue>();
 
 
 
         [Serializable]
-        struct Entry
+        private struct Entry
         {
             public TKey Key;
             public TValue Value;
@@ -34,7 +34,7 @@ namespace Utilities
 
             foreach (var pair in Dic)
             {
-                entries.Add(new(pair.Key, pair.Value));
+                entries.Add(new Entry(pair.Key, pair.Value));
             }
         }
 

@@ -4,29 +4,24 @@ using UnityEngine;
 namespace Utilities
 {
     [Serializable]
-    public struct SystemObjectSerialized : ISerializationCallbackReceiver
+    public class SystemObjectSerialized : ISerializationCallbackReceiver
     {
+        public SystemObjectSerialized()
+        { }
         public SystemObjectSerialized(object _val)
         {
             Val = _val;
             valSerialized = ToString(Val);
         }
 
-        // our value of interest
-        public object Val { get; private set; }
+        public object Val { get; set; }
 
         [SerializeField, HideInInspector]
         private string valSerialized;
 
-
-        public object GetValue()
-        {
-            return Val;
-        }
-
         public void OnBeforeSerialize()
         {
-            //valSerialized = ToString(Val);
+            valSerialized = ToString(Val);
         }
 
         public void OnAfterDeserialize()
